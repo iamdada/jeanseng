@@ -42,6 +42,7 @@ export default class App extends Component {
                 </View>
                 <Input
                     placeholder='Email Address'
+                    autoCapitalize='none'
                     containerStyle={{
                        width: '90%'
                     }}
@@ -57,6 +58,7 @@ export default class App extends Component {
                 />
                 <Input
                     placeholder='Password (4-16 letters)'
+                    autoCapitalize='none'
                     containerStyle={{
                         width: '90%'
                      }}
