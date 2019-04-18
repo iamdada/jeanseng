@@ -12,12 +12,12 @@ export default class TextArea extends Component {
                 value={this.state.text}
                 style={{
                     width: 200,
-                    height:100,
+                    height: 100,
                     borderColor: 'gray',
                     borderWidth: 1
-                  }}
-                multiline = {true}
-                onChangeText={(text) => this.setState({text})}
+                }}
+                multiline={true}
+                onChangeText={(text) => this.setState({ text })}
                 value={this.state.text}
             />
         );

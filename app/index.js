@@ -1,15 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, TextInput, Image } from 'react-native';
-import TextArea from './components/TextArea/TextArea.component';
-import { Button, ThemeProvider, Card, ListItem, Icon } from 'react-native-elements';
+import TextArea from './components/TextArea/TextArea';
+import { Button, ThemeProvider, Card, ListItem, Input, } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import IconFontAwesome5 from "react-native-vector-icons/FontAwesome5";
+
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -31,35 +26,52 @@ const instructions = Platform.select({
 //     );
 //   }
 // }
-const users = [
-    {
-        name: 'brynn',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-    },
-
-];
 
 export default class App extends Component {
     render() {
         return (
-            <ThemeProvider>
-                <Button title="Hey!" />
-                <Card title="CARD WITH DIVIDER">
-                    {
-                        users.map((u, i) => {
-                            return (
-                                <View key={i}>
-                                    <Image
-                                        resizeMode="cover"
-                                        source={{ uri: u.avatar }}
-                                    />
-                                    <Text >{u.name}</Text>
-                                </View>
-                            );
-                        })
-                    }
-                </Card>
-            </ThemeProvider>
+            <View style={styles.container}>
+                <View style={{ justiftyContent: "center", alignItems: "center", marginBottom: 100 }}>
+                    <IconFontAwesome5
+                        raised
+                        name='door-open'
+                        color='#ffeb3b'
+                        size={150}
+                        containerStyle={{ paddingBottom: 500 }}
+                        onPress={() => console.log('hello')} />
+                </View>
+                <Input
+                    placeholder='Email Address'
+                    containerStyle={{
+                       width: '90%'
+                    }}
+                    inputStyle={{
+                        color: '#e1e2e3',
+                        fontSize: 16,
+                        paddingLeft: 10
+                    }}
+                    placeholderTextColor='#e1e2e3'
+                    shake={true}
+                // errorStyle={{ color: 'red' }}
+                // errorMessage='Email is required'
+                />
+                <Input
+                    placeholder='Password (4-16 letters)'
+                    containerStyle={{
+                        width: '90%'
+                     }}
+                    inputStyle={{
+                        color: '#e1e2e3',
+                        fontSize: 16,
+                        paddingLeft: 10
+                    }}
+                    placeholderTextColor='#e1e2e3'
+                    shake={true}
+                // errorStyle={{ color: 'red' }}
+                // errorMessage='Password is required'
+                // leftIcon={{ type: 'font-awesome', name: 'chevron-left' }}
+                />
+            </View>
         );
     }
 }
@@ -70,7 +82,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        // backgroundColor: '#212121',
+        backgroundColor: '#2b2f34',
+        // color: 'white'
     },
     welcome: {
         fontSize: 20,
